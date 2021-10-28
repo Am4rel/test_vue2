@@ -1,32 +1,51 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+        <nav class="navigation">
+            <router-link to="/" class="nav-link">Go to Home page</router-link>
+            <router-link to="/lists" class="nav-link">Go to Lists page</router-link>
+            <router-link to="/counter" class="nav-link">Go to Counter page</router-link>
+        </nav>
+        <router-view/>
     </div>
-    <router-view/>
-  </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  div{
+        width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
 
-#nav {
-  padding: 30px;
-}
+    ul {
+        list-style: none;
+        margin: 0;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    li{
+        padding: 10px;
+        border: 1px solid black
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    .navigation {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 10px;
+        padding-bottom: 20px;
+        border-bottom: 1px dashed black;
+    }
+
+    .nav-link {
+        text-align: center;
+    }
+
+    .nav-link:nth-child(1) {
+        grid-column-start: 2;
+    }
+    .nav-link:nth-child(2) {
+        grid-column-start: 3;
+    }
+    .nav-link:nth-child(3) {
+        grid-column-start: 4;
+    }
 </style>
